@@ -11,10 +11,10 @@ A webpage that displays my team's basic info so that a user have quick access to
 
 ## Deployment
 
-Example HTML page displaying user results.
+Example HTML page displaying user results can be found here: https://github.com/DavouJ/Organisation-Structure-Creator/blob/main/starter/output/team.html.
 
 
-![Gif of page](/assets/images/page.gif)
+![Image of example page](./assets/images/img.png)
 
 ## Features
 
@@ -85,6 +85,8 @@ No contributions.
 
 ## Tests
 
-To test the functionality of all classes,  methods, and modules, run the following commands:
+To test the functionality of all classes,  methods, and modules, run the following command within the terminal:
+
+```npm run test```
 
 
