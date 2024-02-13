@@ -215,7 +215,7 @@ const createIntern = () => {
     ])
         .then((internAnswers) => {
             // Then store the answers into a new engineer object
-            const intern = new Engineer(internAnswers.name, internAnswers.id, internAnswers.email, internAnswers.school);
+            const intern = new Intern(internAnswers.name, internAnswers.id, internAnswers.email, internAnswers.school);
             //push the manager into the team members array
             teamMembers.push(intern)
             next()
@@ -240,13 +240,14 @@ function next() {
                 createIntern();
                 break;
             case "Finish building the team":
-                createTeam();
-                fs.writeFileSync(outputPath, render(teamMembers), "utf-8");
+                createTeam(teamMembers);
+                
         }
     })
 }
-function createTeam(){
-    console.log()
+function createTeam(teamMembers){
+    fs.writeFileSync(outputPath, render(teamMembers), "utf-8");
+    console.log(manager.getName())
 }
 
 // Then create a conditional to check which member the user picked and run the appropriate function based off of that input ex:`if(userChoice === 'Engineer'){createEngineer()}`

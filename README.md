@@ -76,9 +76,8 @@ SOFTWARE.
 
 ## Badges CHANGE
 
-![badmath](https://img.shields.io/badge/HTML-49.3-blue)
-![badmath](https://img.shields.io/badge/CSS-1.9-orange)
-![badmath](https://img.shields.io/badge/js-48.8-purple)
+
+![badmath](https://img.shields.io/badge/js-100.0-purple)
 
 ## How to Contribute
 
@@ -87,5 +86,5 @@ No contributions.
 ## Tests
 
 To test the functionality of all classes,  methods, and modules, run the following commands:
-  
+
 
