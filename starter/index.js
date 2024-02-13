@@ -156,7 +156,7 @@ const createEngineer = () => {
 
 // Function to create an intern
 // Asks for a name, id, email, and school
-const createInter = () => {
+const createIntern = () => {
 
     // Asks for a name, id, email, and github
     return inquirer.prompt([
@@ -201,8 +201,8 @@ const createInter = () => {
         },
         {
             type: 'input',
-            name: 'gitHub',
-            message: 'What is the team interns\'s GitHub username?',
+            name: 'school',
+            message: 'What is the team interns\'s school?',
             validate: (answer) => {
                 if (answer !== '') {
                     return true;
@@ -215,7 +215,7 @@ const createInter = () => {
     ])
         .then((internAnswers) => {
             // Then store the answers into a new engineer object
-            const intern = new Engineer(internAnswers.name, internAnswers.id, internAnswers.email, internAnswers.gitHub);
+            const intern = new Engineer(internAnswers.name, internAnswers.id, internAnswers.email, internAnswers.school);
             //push the manager into the team members array
             teamMembers.push(intern)
             next()
@@ -234,10 +234,10 @@ function next() {
     ]).then((nextAnswer) => {
         switch(nextAnswer.next) {
             case "Add an engineer":
-                addEngineer();
+                createEngineer();
                 break;
             case "Add an intern":
-                addIntern();
+                createIntern();
                 break;
             case "Finish building the team":
                 createTeam();
@@ -245,8 +245,9 @@ function next() {
         }
     })
 }
-
-// Function to ask the user what team member they would like to create next, either a Engineer or Intern. Also ask if they don't want to add any more team members. SHOULD BE CALLED AT THE END OF EACH MEMBER FUNCTION SO THEY CAN CREATE ANOTHER MEMBER AFTER ALREADY CREATING ONE.
+function createTeam(){
+    console.log()
+}
 
 // Then create a conditional to check which member the user picked and run the appropriate function based off of that input ex:`if(userChoice === 'Engineer'){createEngineer()}`
 // Have a else condition so that if they choose to not make any more members, the file gets written.(Can create a function for this and then call the function)
