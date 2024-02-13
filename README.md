@@ -1,5 +1,5 @@
 # Organisation-Structure-Creator
-A program the creates team profiles for an organisation.
+A webpage that displays my team's basic info so that a user have quick access to their emails and GitHub profiles.
 
 ## Table of Contents 
 
@@ -11,31 +11,37 @@ A program the creates team profiles for an organisation.
 
 ## Deployment
 
-Application deployed via the live GitHub URL: https://davouj.github.io/Weather-App/.
+Application deployed via the live GitHub URL: https://davouj.github.io/Organisation-Structure-Creator/.
 
 
 ![Gif of page](/assets/images/page.gif)
 
 ## Features
 
-*   When a user searches for a city they are presented with current and future conditions for that city and that city is added to the search history
+* When a user starts the application then they are prompted to enter the team manager’s:
+    *  Name
+    *  Employee ID
+    *  Email address
+    *  Office number
 
-*   When a user views the current weather conditions for that city they are presented with:
-    *   The city name
-    *   The date
-    *   An icon representation of weather conditions
-    *   The temperature
-    *   The humidity
-    *   The wind speed
+* When a user enters those requirements then the user is presented with a menu with the option to:
+    *  Add an engineer
+    *  Add an intern
+    *  Finish building the team
 
-*   When a user view future weather conditions for that city they are presented with a 5-day forecast that displays:
-    *   The date
-    *   An icon representation of weather conditions
-    *   The temperature
-    *   The humidity
+* When a user selects the engineer option then a user is prompted to enter the following and then the user is taken back to the menu:
+    *  Engineer's Name
+    *  ID
+    *  Email
+    *  GitHub username
 
-*   When a user click on a city in the search history they are again presented with current and future conditions for that city
+* When a user selects the intern option then a user is prompted to enter the following and then the user is taken back to the menu:
+    *  Intern’s name
+    *  ID
+    *  Email
+    *  School
 
+When a user decides to finish building their team then they exit the application, a HTML page is generated.
 
 
 ## Credits
@@ -80,4 +86,6 @@ No contributions.
 
 ## Tests
 
-No tests.
+To test the functionality of all classes,  methods, and modules, run the following commands:
+  
+
