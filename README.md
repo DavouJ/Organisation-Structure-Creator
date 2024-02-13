@@ -11,7 +11,7 @@ A webpage that displays my team's basic info so that a user have quick access to
 
 ## Deployment
 
-Application deployed via the live GitHub URL: https://davouj.github.io/Organisation-Structure-Creator/.
+Example HTML page displaying user results.
 
 
 ![Gif of page](/assets/images/page.gif)

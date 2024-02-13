@@ -25,7 +25,7 @@ function createManager() {
     return inquirer.prompt([
         {
             type: 'input',
-            name: 'name',
+            name: 'managerName',
             message: 'What is the team manager\'s name?',
             validate: (answer) => {
                 if (answer !== '') {
@@ -38,7 +38,7 @@ function createManager() {
         },
         {
             type: 'number',
-            name: 'id',
+            name: 'managerId',
             message: 'Enter the team manager\'s ID.',
             validate: (answer) => {
                 if (answer !== '') {
@@ -51,7 +51,7 @@ function createManager() {
         },
         {
             type: 'input',
-            name: 'email',
+            name: 'managerEmail',
             message: 'What is the team manager\'s email address?',
             validate: (answer) => {
                 if (answer !== '') {
@@ -78,7 +78,7 @@ function createManager() {
     ])
         .then((managerAnswers) => {
             // Then store the answers into a new Manager object
-            const manager = new Manager(managerAnswers.name, managerAnswers.id, managerAnswers.email, managerAnswers.officeNumber);
+            const manager = new Manager(managerAnswers.managerName, managerAnswers.managerId, managerAnswers.managerEmail, managerAnswers.officeNumber);
             //push the manager into the team members array
             teamMembers.push(manager)
             next()
@@ -93,7 +93,7 @@ const createEngineer = () => {
     return inquirer.prompt([
         {
             type: 'input',
-            name: 'name',
+            name: 'engineerName',
             message: 'What is the team engineers\'s name?',
             validate: (answer) => {
                 if (answer !== '') {
@@ -106,7 +106,7 @@ const createEngineer = () => {
         },
         {
             type: 'number',
-            name: 'id',
+            name: 'engineerId',
             message: 'Enter the team engineers\'s ID.',
             validate: (answer) => {
                 if (answer !== '') {
@@ -119,7 +119,7 @@ const createEngineer = () => {
         },
         {
             type: 'input',
-            name: 'email',
+            name: 'engineerEmail',
             message: 'What is the team engineers\'s email address?',
             validate: (answer) => {
                 if (answer !== '') {
@@ -138,7 +138,7 @@ const createEngineer = () => {
                 if (answer !== '') {
                     return true;
                 } else {
-                    console.log('Please enter the team engineers\'s name');
+                    console.log('Please enter the team engineers\'s Github');
                     return false;
                 }
             }
@@ -146,7 +146,8 @@ const createEngineer = () => {
     ])
         .then((engineerAnswers) => {
             // Then store the answers into a new engineer object
-            const engineer = new Engineer(engineerAnswers.name, engineerAnswers.id, engineerAnswers.email, engineerAnswers.gitHub);
+            const engineer = new Engineer(engineerAnswers.engineerName, engineerAnswers.engineerId, engineerAnswers.engineerEmail, engineerAnswers.gitHub);
+            //engineer.getGithub()
             //push the manager into the team members array
             teamMembers.push(engineer)
             next()
@@ -162,7 +163,7 @@ const createIntern = () => {
     return inquirer.prompt([
         {
             type: 'input',
-            name: 'name',
+            name: 'internName',
             message: 'What is the team interns\'s name?',
             validate: (answer) => {
                 if (answer !== '') {
@@ -175,7 +176,7 @@ const createIntern = () => {
         },
         {
             type: 'number',
-            name: 'id',
+            name: 'internId',
             message: 'Enter the team interns\'s ID.',
             validate: (answer) => {
                 if (answer !== '') {
@@ -188,7 +189,7 @@ const createIntern = () => {
         },
         {
             type: 'input',
-            name: 'email',
+            name: 'internEmail',
             message: 'What is the team interns\'s email address?',
             validate: (answer) => {
                 if (answer !== '') {
@@ -215,7 +216,7 @@ const createIntern = () => {
     ])
         .then((internAnswers) => {
             // Then store the answers into a new engineer object
-            const intern = new Intern(internAnswers.name, internAnswers.id, internAnswers.email, internAnswers.school);
+            const intern = new Intern(internAnswers.internName, internAnswers.internId, internAnswers.internEmail, internAnswers.school);
             //push the manager into the team members array
             teamMembers.push(intern)
             next()
@@ -246,10 +247,12 @@ function next() {
     })
 }
 function createTeam(teamMembers){
+    console.log(teamMembers)
+    if (!fs.existsSync(OUTPUT_DIR)){
+        fs.mkdirSync(OUTPUT_DIR)
+    }
     fs.writeFileSync(outputPath, render(teamMembers), "utf-8");
-    console.log(manager.getName())
 }
-
 // Then create a conditional to check which member the user picked and run the appropriate function based off of that input ex:`if(userChoice === 'Engineer'){createEngineer()}`
 // Have a else condition so that if they choose to not make any more members, the file gets written.(Can create a function for this and then call the function)
 
